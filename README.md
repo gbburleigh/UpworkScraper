@@ -83,12 +83,10 @@ Dataset is written to a sqlite database that can be queried directly for further
 Timestamps can be compared to tally posts falling in some range.
 
 '''
-#Selecting the posts from March 2021.
 
 SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30';
 
-#Now the same, but looking for moderated posts.
-
 SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30' AND edit_status!='Unedited';
+
 '''
 
