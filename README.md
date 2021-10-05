@@ -2,11 +2,6 @@
 
 Dataset of threads, posts, and users taken from Upwork's community forum, along with the scraper used to aggregate the data.
 
-| Threads | 72,517  |
-|---------|---------|
-| Posts   | 456,626 |
-| Users   | 73,830  |
-
 <h1>Analyzing Data</h1>
 
 Dataset is written to a sqlite database that can be queried directly for further analysis. Python's sqlite package offers a direct interface that we can leverage to pull specific queries with. 
@@ -82,11 +77,8 @@ Dataset is written to a sqlite database that can be queried directly for further
 
 Timestamps can be compared to tally posts falling in some range.
 
-'''
-
 SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30';
 
 SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30' AND edit_status!='Unedited';
 
-'''
 
