@@ -77,8 +77,16 @@ Dataset is written to a sqlite database that can be queried directly for further
  <h2>Database Schema</h2>
  
  In order to relate entries in each of the four tables (<it>threads</it>, <it>posts</it>, <it>users</it>, <it>categories</it>), the database uses a system of ids for all entries, hashed from the information stored with it. As shown above, obtaining the id of a given element can be used to find associated entries in other tables. You can search for posts or threads made by a given user id, look for all posts under a given thread id, or count the number of threads made in a given category. 
- 
- 
-<img src="dbSchema.png" style="display: block;
-  margin-left: auto;
-  margin-right: auto;">
+
+<h3>Additional Queries</h3>
+
+Timestamps can be compared to tally posts falling in some range.
+
+'''
+#Selecting the posts from March 2021.
+SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30';
+
+#Now the same, but looking for moderated posts.
+SELECT COUNT(*) FROM posts p WHERE post_date > '2021-03-01' AND post_date < '2021-03-30' AND edit_status!='Unedited';
+'''
+
