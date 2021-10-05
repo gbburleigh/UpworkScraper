@@ -78,3 +78,5 @@ Dataset is written to a sqlite database that can be queried directly for further
  
  In order to relate entries in each of the four tables (<it>threads</it>, <it>posts</it>, <it>users</it>, <it>categories</it>), the database uses a system of ids for all entries, hashed from the information stored with it. As shown above, obtaining the id of a given element can be used to find associated entries in other tables. You can search for posts or threads made by a given user id, look for all posts under a given thread id, or count the number of threads made in a given category. 
  
+ 
+<img src="db_schema.png">
